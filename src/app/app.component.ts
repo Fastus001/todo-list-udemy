@@ -35,7 +35,9 @@ export class AppComponent {
         date: new Date()
       };
     }, 500);
+  }
 
-
+  clearTasks(): void{
+      this.tasks = [];
   }
 }
