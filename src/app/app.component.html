@@ -21,8 +21,8 @@
   </div>
 
   <ul class="collection">
-    <li class="collection-item row" *ngFor="">
-      <span class="col s10">1 Siłownia - 11.07 czwartek</span>
+    <li class="collection-item row" *ngFor="let task of tasks">
+      <span class="col s10">{{task.name}} - {{task.deadline | date: 'd.MM EEEE':'':'pl'}}</span>
       <div class="col s2 right-align">
         <button class="btn-floating btn-small red">
           <i class="material-icons">remove</i>
