@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 import {Task} from './task';
 
 @Component({
@@ -7,6 +7,9 @@ import {Task} from './task';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  taskName = 'Sugerowane zadanie codzienne: odkurzanie';
+  taskDate = '';
+
   config: { [key: string]: string | Date} = null;
   tasks: Task[] = [
     {
@@ -41,12 +44,14 @@ export class AppComponent {
       this.tasks = [];
   }
 
-  createTask(name: string, deadline: string): void{
+  createTask(): void{
     const task: Task = {
-      name,
-      deadline,
+      name: this.taskName,
+      deadline: this.taskDate,
       done: false
     };
     this.tasks.push(task);
+    this.taskName = '';
+    this.taskDate = '';
   }
 }
